@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KRULY</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#0e0e0e;
+  color:white;
+}
+
+/* HEADER */
+header{
+  height:70px;
+  background:white;
+  color:black;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 60px;
+}
+
+.logo{
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:black;
+  cursor:pointer;
+}
+
+/* HOME */
+.home{
+  height:calc(100vh - 70px);
+  background:url("images/img0.jpg") center/cover no-repeat;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.home-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.home-text h1{
+  font-size:48px;
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+
+.line{
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.small{
+  font-size:12px;
+  opacity:0.85;
+}
+
+/* SOCIALS */
+.socials{
+  margin-top:25px;
+}
+
+.socials a{
+  color:white;
+  font-size:22px;
+  margin:0 12px;
+}
+
+/* SECTIONS */
+.section{
+  min-height:calc(100vh - 70px);
+  padding:80px;
+  display:none;
+  position:relative;
+}
+
+.section h2{
+  margin-bottom:40px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+}
+
+/* WALLPAPERS */
+#wallpapers{
+  background:url("images/img15.jpg") center/cover no-repeat;
+}
+
+#wallpapers::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+#wallpapers > *{
+  position:relative;
+  z-index:1;
+}
+
+/* MODS */
+#mods{
+  background:url("images/img14.jpg") center/cover no-repeat;
+}
+
+#mods::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+#mods > *{
+  position:relative;
+  z-index:1;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+/* WALLPAPER CARDS */
+.wallpaper{
+  position:relative;
+}
+
+.wallpaper img{
+  width:100%;
+  border-radius:8px;
+}
+
+.wallpaper a{
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  background:rgba(0,0,0,0.8);
+  color:white;
+  padding:10px;
+  border-radius:50%;
+}
+
+/* MOD CARDS */
+.mod-card{
+  text-align:center;
+}
+
+.mod-card img{
+  width:100%;
+  border-radius:8px;
+}
+
+.explore-btn{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  letter-spacing:1px;
+  color:white;
+  text-decoration:none;
+  opacity:0.85;
+  cursor:pointer;
+}
+
+.explore-btn:hover{
+  opacity:1;
+}
+
+.mod-card span{
+  display:block;
+  margin-top:6px;
+  letter-spacing:2px;
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* EXPLORE */
+#explore{
+  text-align:center;
+}
+
+#explore h1{
+  margin-top:120px;
+  letter-spacing:4px;
+}
+
+#explore p{
+  margin-top:15px;
+  letter-spacing:2px;
+  opacity:0.7;
+}
+
+/* DEFAULT */
+#home{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚡ KRULY</div>
+  <nav>
+    <a onclick="showHome()">Home</a>
+    <a onclick="showWallpapers()">Wallpapers</a>
+    <a onclick="showMods()">Mods</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="home">
+  <div class="overlay"></div>
+  <div class="home-text">
+    <h1>THE ULTIMATE<br>NFS HUB</h1>
+    <p class="line">HIGH QUALITY WALLPAPERS · NFS MODS · STREET RACING</p>
+    <p class="small">FROM Rivals TO UNBOUND — ALL IN ONE PLACE</p>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/share/1BJ8K6dPFn/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://discord.gg/c5HNe4Xxck" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://youtube.com/@pure-vid" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/user/313ub5noauaqgh4wvwz7tuzuujhq" target="_blank"><i class="fab fa-spotify"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WALLPAPERS -->
+<section id="wallpapers" class="section">
+  <h2>Wallpapers</h2>
+  <div class="grid">
+    <div class="wallpaper"><img src="images/img1.jpg"><a href="images/img1.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img2.jpg"><a href="images/img2.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img3.jpg"><a href="images/img3.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img4.jpg"><a href="images/img4.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img5.jpg"><a href="images/img5.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img6.jpg"><a href="images/img6.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img7.jpg"><a href="images/img7.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img8.jpg"><a href="images/img8.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img16.jpg"><a href="images/img16.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img17.jpg"><a href="images/img17.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img18.jpg"><a href="images/img18.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img19.jpg"><a href="images/img19.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img20.jpg"><a href="images/img20.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img21.jpg"><a href="images/img21.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img22.jpg"><a href="images/img22.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img23.jpg"><a href="images/img23.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img24.jpg"><a href="images/img24.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img25.jpg"><a href="images/img25.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img26.jpg"><a href="images/img26.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img src="images/img27.jpg"><a href="images/img27.jpg" download><i class="fa-solid fa-download"></i></a></div>
+  </div>
+</section>
+
+<!-- MODS -->
+<section id="mods" class="section">
+  <h2>Mods</h2>
+  <div class="grid">
+    <div class="mod-card"><img src="images/img9.jpg"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Rivals</span></div>
+    <div class="mod-card"><img src="images/img10.jpg"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Payback</span></div>
+    <div class="mod-card"><img src="images/img11.jpg"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Heat</span></div>
+    <div class="mod-card"><img src="images/img12.jpg"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Unbound</span></div>
+    <div class="mod-card"><img src="images/img13.jpg"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS 2015</span></div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore" class="section">
+  <h2>Explore Mods</h2>
+  <h1>NOTHING TO SEE HERE YET</h1>
+  <p>STAY TUNED</p>
+  <a class="back-btn" onclick="showMods()">← Back to Mods</a>
+</section>
+
+<script>
+const home = document.getElementById("home");
+const wallpapers = document.getElementById("wallpapers");
+const mods = document.getElementById("mods");
+const explore = document.getElementById("explore");
+
+function hideAll(){
+  home.style.display="none";
+  wallpapers.style.display="none";
+  mods.style.display="none";
+  explore.style.display="none";
+}
+
+function showHome(){ hideAll(); home.style.display="block"; }
+function showWallpapers(){ hideAll(); wallpapers.style.display="block"; }
+function showMods(){ hideAll(); mods.style.display="block"; }
+function showExplore(){ hideAll(); explore.style.display="block"; }
+</script>
+
+</body>
+</html>
