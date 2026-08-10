@@ -160,10 +160,27 @@ nav a{
   z-index:1;
 }
 
+/* STORE */
+#store{
+  background:url("background1.jpg") center/cover no-repeat;
+}
+
+#store::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+#store > *{
+  position:relative;
+  z-index:1;
+}
+
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(440px,1fr));
   gap:25px;
 }
 
@@ -185,6 +202,37 @@ nav a{
   color:white;
   padding:10px;
   border-radius:50%;
+}
+
+.wallpaper a.preview-btn{
+  right:60px;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:8px;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:25px;
+  right:35px;
+  font-size:36px;
+  color:white;
+  cursor:pointer;
+  line-height:1;
 }
 
 /* MOD CARDS */
@@ -286,53 +334,53 @@ nav a{
   <div class="grid">
 
     <!-- img1 → img8 -->
-    <div class="wallpaper"><img data-src="img1.jpg" loading="lazy"><a href="img1.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img2.jpg" loading="lazy"><a href="img2.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img3.jpg" loading="lazy"><a href="img3.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img4.jpg" loading="lazy"><a href="img4.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img5.jpg" loading="lazy"><a href="img5.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img6.jpg" loading="lazy"><a href="img6.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img7.jpg" loading="lazy"><a href="img7.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img8.jpg" loading="lazy"><a href="img8.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img1.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img1.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img2.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img2.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img3.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img3.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img4.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img4.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img5.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img5.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img6.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img6.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img7.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img7.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img8.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img8.jpg" download><i class="fa-solid fa-download"></i></a></div>
 
     <!-- img16 → img27 -->
-    <div class="wallpaper"><img data-src="img16.jpg" loading="lazy"><a href="img16.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img17.jpg" loading="lazy"><a href="img17.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img18.jpg" loading="lazy"><a href="img18.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img19.jpg" loading="lazy"><a href="img19.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img20.jpg" loading="lazy"><a href="img20.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img21.jpg" loading="lazy"><a href="img21.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img22.jpg" loading="lazy"><a href="img22.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img23.jpg" loading="lazy"><a href="img23.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img24.jpg" loading="lazy"><a href="img24.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img25.jpg" loading="lazy"><a href="img25.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img26.jpg" loading="lazy"><a href="img26.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="img27.jpg" loading="lazy"><a href="img27.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img16.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img16.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img17.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img17.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img18.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img18.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img19.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img19.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img20.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img20.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img21.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img21.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img22.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img22.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img23.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img23.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img24.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img24.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img25.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img25.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img26.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img26.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img27.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="img27.jpg" download><i class="fa-solid fa-download"></i></a></div>
 
     <!-- img28 → img50 -->
-    <div class="wallpaper"><img data-src="28.jpg" loading="lazy"><a href="28.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="29.jpg" loading="lazy"><a href="29.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="30.jpg" loading="lazy"><a href="30.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="31.jpg" loading="lazy"><a href="31.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="32.jpg" loading="lazy"><a href="32.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="33.jpg" loading="lazy"><a href="33.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="34.jpg" loading="lazy"><a href="34.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="35.jpg" loading="lazy"><a href="35.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="36.jpg" loading="lazy"><a href="36.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="37.jpg" loading="lazy"><a href="37.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="38.jpg" loading="lazy"><a href="38.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="39.jpg" loading="lazy"><a href="39.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="40.jpg" loading="lazy"><a href="40.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="41.jpg" loading="lazy"><a href="41.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="42.jpg" loading="lazy"><a href="42.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="43.jpg" loading="lazy"><a href="43.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="44.jpg" loading="lazy"><a href="44.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="45.jpg" loading="lazy"><a href="45.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="46.jpg" loading="lazy"><a href="46.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="47.jpg" loading="lazy"><a href="47.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="48.jpg" loading="lazy"><a href="48.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="49.jpg" loading="lazy"><a href="49.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="50.jpg" loading="lazy"><a href="50.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="28.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="28.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="29.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="29.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="30.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="30.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="31.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="31.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="32.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="32.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="33.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="33.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="34.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="34.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="35.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="35.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="36.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="36.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="37.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="37.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="38.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="38.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="39.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="39.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="40.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="40.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="41.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="41.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="42.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="42.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="43.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="43.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="44.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="44.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="45.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="45.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="46.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="46.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="47.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="47.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="48.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="48.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="49.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="49.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="50.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="50.jpg" download><i class="fa-solid fa-download"></i></a></div>
 
   </div>
 </section>
@@ -353,30 +401,30 @@ nav a{
 <section id="ai" class="section">
   <h2>AI Garage</h2>
   <div class="grid">
-    <div class="wallpaper"><img data-src="ai1.jpg" loading="lazy"><a href="ai1.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai2.jpg" loading="lazy"><a href="ai2.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai3.jpg" loading="lazy"><a href="ai3.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai4.jpg" loading="lazy"><a href="ai4.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai5.jpg" loading="lazy"><a href="ai5.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai6.jpg" loading="lazy"><a href="ai6.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai7.jpg" loading="lazy"><a href="ai7.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai8.jpg" loading="lazy"><a href="ai8.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai9.jpg" loading="lazy"><a href="ai9.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai10.jpg" loading="lazy"><a href="ai10.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai11.jpg" loading="lazy"><a href="ai11.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai12.jpg" loading="lazy"><a href="ai12.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai13.jpg" loading="lazy"><a href="ai13.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai14.jpg" loading="lazy"><a href="ai14.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai15.jpg" loading="lazy"><a href="ai15.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai16.jpg" loading="lazy"><a href="ai16.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai17.jpg" loading="lazy"><a href="ai17.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai18.jpg" loading="lazy"><a href="ai18.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai19.jpg" loading="lazy"><a href="ai19.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai20.jpg" loading="lazy"><a href="ai20.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai21.jpg" loading="lazy"><a href="ai21.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai22.jpg" loading="lazy"><a href="ai22.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai23.jpg" loading="lazy"><a href="ai23.jpg" download><i class="fa-solid fa-download"></i></a></div>
-    <div class="wallpaper"><img data-src="ai24.jpg" loading="lazy"><a href="ai24.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai1.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai1.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai2.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai2.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai3.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai3.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai4.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai4.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai5.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai5.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai6.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai6.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai7.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai7.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai8.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai8.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai9.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai9.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai10.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai10.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai11.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai11.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai12.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai12.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai13.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai13.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai14.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai14.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai15.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai15.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai16.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai16.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai17.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai17.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai18.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai18.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai19.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai19.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai20.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai20.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai21.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai21.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai22.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai22.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai23.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai23.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai24.jpg" loading="lazy"><a class="preview-btn" onclick="openLightbox(this)"><i class="fa-solid fa-eye"></i></a><a href="ai24.jpg" download><i class="fa-solid fa-download"></i></a></div>
   </div>
 </section>
 
@@ -398,6 +446,12 @@ nav a{
     <a href="https://www.g2g.com/Pablo_Scobar" target="_blank" class="back-btn">G2G Store →</a>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target.id==='lightbox') closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
 
 <script>
 const home = document.getElementById("home");
@@ -429,6 +483,16 @@ function showMods(){ hideAll(); mods.style.display="block"; loadImages(mods); }
 function showAI(){ hideAll(); ai.style.display="block"; loadImages(ai); }
 function showExplore(){ hideAll(); explore.style.display="block"; }
 function showStore(){ hideAll(); store.style.display="block"; }
+
+function openLightbox(btn){
+  const img = btn.parentElement.querySelector("img");
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
 </script>
 
 </body>
