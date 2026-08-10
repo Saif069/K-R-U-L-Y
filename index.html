@@ -202,6 +202,13 @@ nav a{
   color:white;
   padding:10px;
   border-radius:50%;
+  cursor:pointer;
+  transition:background .2s;
+}
+
+.wallpaper a:hover{
+  background:white;
+  color:black;
 }
 
 .wallpaper a.preview-btn{
@@ -470,10 +477,20 @@ function hideAll(){
   store.style.display="none";
 }
 
+const lazyObserver = new IntersectionObserver((entries, observer)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const img = entry.target;
+      img.src = img.getAttribute("data-src");
+      img.removeAttribute("data-src");
+      observer.unobserve(img);
+    }
+  });
+}, { rootMargin: "300px" });
+
 function loadImages(section){
   section.querySelectorAll("img[data-src]").forEach(img=>{
-    img.src = img.getAttribute("data-src");
-    img.removeAttribute("data-src");
+    lazyObserver.observe(img);
   });
 }
 
