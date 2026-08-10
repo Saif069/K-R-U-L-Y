@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SAIF</title>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#0e0e0e;
+  color:white;
+}
+
+/* HEADER */
+header{
+  height:70px;
+  background:white;
+  color:black;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 60px;
+}
+
+.logo{
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  color:black;
+  cursor:pointer;
+}
+
+/* HOME */
+.home{
+  height:calc(100vh - 70px);
+  background:url("img0.jpg") center/cover no-repeat;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.home-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+.home-text h1{
+  font-size:48px;
+  letter-spacing:4px;
+  margin-bottom:20px;
+}
+
+.line{
+  font-size:14px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+}
+
+.small{
+  font-size:12px;
+  opacity:0.85;
+}
+
+/* SOCIALS */
+.socials{
+  margin-top:25px;
+}
+
+.socials a{
+  color:white;
+  font-size:22px;
+  margin:0 12px;
+}
+
+/* SECTIONS */
+.section{
+  min-height:calc(100vh - 70px);
+  padding:80px;
+  display:none;
+  position:relative;
+}
+
+.section h2{
+  margin-bottom:40px;
+  text-transform:uppercase;
+  letter-spacing:4px;
+}
+
+/* WALLPAPERS */
+#wallpapers{
+  background:url("img15.jpg") center/cover no-repeat;
+}
+
+#wallpapers::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+#wallpapers > *{
+  position:relative;
+  z-index:1;
+}
+
+/* MODS */
+#mods{
+  background:url("img14.jpg") center/cover no-repeat;
+}
+
+#mods::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+}
+
+#mods > *{
+  position:relative;
+  z-index:1;
+}
+
+/* AI GARAGE */
+#ai{
+  background:url("ai-background.jpg") center/cover no-repeat;
+}
+
+#ai::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+#ai > *{
+  position:relative;
+  z-index:1;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:25px;
+}
+
+/* WALLPAPER CARDS */
+.wallpaper{
+  position:relative;
+}
+
+.wallpaper img{
+  width:100%;
+  border-radius:10px;
+}
+
+.wallpaper a{
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  background:rgba(0,0,0,0.8);
+  color:white;
+  padding:10px;
+  border-radius:50%;
+}
+
+/* MOD CARDS */
+.mod-card{
+  text-align:center;
+}
+
+.mod-card img{
+  width:100%;
+  border-radius:10px;
+}
+
+.explore-btn{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  letter-spacing:1px;
+  color:white;
+  text-decoration:none;
+  opacity:0.85;
+  cursor:pointer;
+}
+
+.explore-btn:hover{
+  opacity:1;
+}
+
+.mod-card span{
+  display:block;
+  margin-top:6px;
+  letter-spacing:2px;
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* EXPLORE */
+#explore{
+  text-align:center;
+}
+
+#explore h1{
+  margin-top:120px;
+  letter-spacing:4px;
+}
+
+#explore p{
+  margin-top:15px;
+  letter-spacing:2px;
+  opacity:0.7;
+}
+
+.back-btn{
+  display:inline-block;
+  margin-top:40px;
+  cursor:pointer;
+  opacity:0.8;
+}
+
+/* DEFAULT */
+#home{
+  display:block;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">⚡ SAIF</div>
+  <nav>
+    <a onclick="showHome()">Home</a>
+    <a onclick="showWallpapers()">Wallpapers</a>
+    <a onclick="showMods()">Mods</a>
+    <a onclick="showAI()">AI Art</a>
+    <a onclick="showStore()">Store</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="home">
+  <div class="overlay"></div>
+  <div class="home-text">
+    <h1>THE ULTIMATE<br>PRJKTBLUBEAM HUB</h1>
+    <p class="line">HIGH QUALITY WALLPAPERS · NFS MODS · STREET RACING</p>
+    <p class="small">FROM NFS MW 2005 TO UNBOUND — ALL IN ONE PLACE</p>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/share/1BJ8K6dPFn/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://discord.gg/c5HNe4Xxck" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://youtube.com/@drowned-o2r?si=FBd860hVbEOQYGne" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/user/313ub5noauaqgh4wvwz7tuzuujhq" target="_blank"><i class="fab fa-spotify"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- WALLPAPERS -->
+<section id="wallpapers" class="section">
+  <h2>Wallpapers</h2>
+  <div class="grid">
+
+    <!-- img1 → img8 -->
+    <div class="wallpaper"><img data-src="img1.jpg" loading="lazy"><a href="img1.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img2.jpg" loading="lazy"><a href="img2.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img3.jpg" loading="lazy"><a href="img3.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img4.jpg" loading="lazy"><a href="img4.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img5.jpg" loading="lazy"><a href="img5.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img6.jpg" loading="lazy"><a href="img6.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img7.jpg" loading="lazy"><a href="img7.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img8.jpg" loading="lazy"><a href="img8.jpg" download><i class="fa-solid fa-download"></i></a></div>
+
+    <!-- img16 → img27 -->
+    <div class="wallpaper"><img data-src="img16.jpg" loading="lazy"><a href="img16.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img17.jpg" loading="lazy"><a href="img17.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img18.jpg" loading="lazy"><a href="img18.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img19.jpg" loading="lazy"><a href="img19.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img20.jpg" loading="lazy"><a href="img20.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img21.jpg" loading="lazy"><a href="img21.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img22.jpg" loading="lazy"><a href="img22.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img23.jpg" loading="lazy"><a href="img23.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img24.jpg" loading="lazy"><a href="img24.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img25.jpg" loading="lazy"><a href="img25.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img26.jpg" loading="lazy"><a href="img26.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="img27.jpg" loading="lazy"><a href="img27.jpg" download><i class="fa-solid fa-download"></i></a></div>
+
+    <!-- img28 → img50 -->
+    <div class="wallpaper"><img data-src="28.jpg" loading="lazy"><a href="28.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="29.jpg" loading="lazy"><a href="29.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="30.jpg" loading="lazy"><a href="30.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="31.jpg" loading="lazy"><a href="31.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="32.jpg" loading="lazy"><a href="32.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="33.jpg" loading="lazy"><a href="33.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="34.jpg" loading="lazy"><a href="34.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="35.jpg" loading="lazy"><a href="35.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="36.jpg" loading="lazy"><a href="36.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="37.jpg" loading="lazy"><a href="37.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="38.jpg" loading="lazy"><a href="38.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="39.jpg" loading="lazy"><a href="39.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="40.jpg" loading="lazy"><a href="40.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="41.jpg" loading="lazy"><a href="41.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="42.jpg" loading="lazy"><a href="42.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="43.jpg" loading="lazy"><a href="43.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="44.jpg" loading="lazy"><a href="44.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="45.jpg" loading="lazy"><a href="45.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="46.jpg" loading="lazy"><a href="46.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="47.jpg" loading="lazy"><a href="47.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="48.jpg" loading="lazy"><a href="48.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="49.jpg" loading="lazy"><a href="49.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="50.jpg" loading="lazy"><a href="50.jpg" download><i class="fa-solid fa-download"></i></a></div>
+
+  </div>
+</section>
+
+<!-- MODS -->
+<section id="mods" class="section">
+  <h2>Mods</h2>
+  <div class="grid">
+    <div class="mod-card"><img data-src="img9.jpg" loading="lazy"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Rivals</span></div>
+    <div class="mod-card"><img data-src="img10.jpg" loading="lazy"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Payback</span></div>
+    <div class="mod-card"><img data-src="img11.jpg" loading="lazy"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Heat</span></div>
+    <div class="mod-card"><img data-src="img12.jpg" loading="lazy"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS Unbound</span></div>
+    <div class="mod-card"><img data-src="img13.jpg" loading="lazy"><a class="explore-btn" onclick="showExplore()">Explore →</a><span>NFS 2015</span></div>
+  </div>
+</section>
+
+<!-- AI GARAGE -->
+<section id="ai" class="section">
+  <h2>AI Garage</h2>
+  <div class="grid">
+    <div class="wallpaper"><img data-src="ai1.jpg" loading="lazy"><a href="ai1.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai2.jpg" loading="lazy"><a href="ai2.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai3.jpg" loading="lazy"><a href="ai3.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai4.jpg" loading="lazy"><a href="ai4.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai5.jpg" loading="lazy"><a href="ai5.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai6.jpg" loading="lazy"><a href="ai6.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai7.jpg" loading="lazy"><a href="ai7.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai8.jpg" loading="lazy"><a href="ai8.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai9.jpg" loading="lazy"><a href="ai9.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai10.jpg" loading="lazy"><a href="ai10.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai11.jpg" loading="lazy"><a href="ai11.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai12.jpg" loading="lazy"><a href="ai12.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai13.jpg" loading="lazy"><a href="ai13.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai14.jpg" loading="lazy"><a href="ai14.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai15.jpg" loading="lazy"><a href="ai15.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai16.jpg" loading="lazy"><a href="ai16.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai17.jpg" loading="lazy"><a href="ai17.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai18.jpg" loading="lazy"><a href="ai18.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai19.jpg" loading="lazy"><a href="ai19.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai20.jpg" loading="lazy"><a href="ai20.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai21.jpg" loading="lazy"><a href="ai21.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai22.jpg" loading="lazy"><a href="ai22.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai23.jpg" loading="lazy"><a href="ai23.jpg" download><i class="fa-solid fa-download"></i></a></div>
+    <div class="wallpaper"><img data-src="ai24.jpg" loading="lazy"><a href="ai24.jpg" download><i class="fa-solid fa-download"></i></a></div>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+<section id="explore" class="section">
+  <h2>Explore Mods</h2>
+  <h1>NOTHING TO SEE HERE YET</h1>
+  <p>STAY TUNED</p>
+  <a class="back-btn" onclick="showMods()">← Back to Mods</a>
+</section>
+
+<!-- STORE -->
+<section id="store" class="section" style="text-align:center">
+  <h2>Store</h2>
+  <h1 style="margin-top:120px; letter-spacing:4px">JOIN OUR DISCORD</h1>
+  <p style="margin-top:15px; letter-spacing:2px; opacity:0.7">UNLIMITED ACCESS · WALLPAPERS · MODS · COMMUNITY</p>
+  <div style="margin-top:40px; display:flex; gap:20px; justify-content:center; flex-wrap:wrap">
+    <a href="https://discord.gg/EVNg4eMgth" target="_blank" class="back-btn">Join Discord →</a>
+    <a href="https://www.g2g.com/Pablo_Scobar" target="_blank" class="back-btn">G2G Store →</a>
+  </div>
+</section>
+
+<script>
+const home = document.getElementById("home");
+const wallpapers = document.getElementById("wallpapers");
+const mods = document.getElementById("mods");
+const ai = document.getElementById("ai");
+const explore = document.getElementById("explore");
+const store = document.getElementById("store");
+
+function hideAll(){
+  home.style.display="none";
+  wallpapers.style.display="none";
+  mods.style.display="none";
+  ai.style.display="none";
+  explore.style.display="none";
+  store.style.display="none";
+}
+
+function loadImages(section){
+  section.querySelectorAll("img[data-src]").forEach(img=>{
+    img.src = img.getAttribute("data-src");
+    img.removeAttribute("data-src");
+  });
+}
+
+function showHome(){ hideAll(); home.style.display="block"; }
+function showWallpapers(){ hideAll(); wallpapers.style.display="block"; loadImages(wallpapers); }
+function showMods(){ hideAll(); mods.style.display="block"; loadImages(mods); }
+function showAI(){ hideAll(); ai.style.display="block"; loadImages(ai); }
+function showExplore(){ hideAll(); explore.style.display="block"; }
+function showStore(){ hideAll(); store.style.display="block"; }
+</script>
+
+</body>
+</html>
+
